@@ -1,17 +1,16 @@
-"use client"; 
+"use client";
 
 import React, { useState } from "react";
 
 const CartBarPage = () => {
-  const [isOpen, setIsOpen] = useState(true); 
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div>
-      
       <div
         className={`fixed top-0 right-0 h-screen w-80 bg-white shadow-xl transition-transform duration-300 ease-in-out z-40 ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        } md:w-96`}
       >
         <div className="p-4 flex justify-between items-center border-b border-gray-200">
           <h2 className="text-lg font-semibold">Your Cart</h2>

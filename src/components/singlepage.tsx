@@ -25,36 +25,28 @@ const products = [
 export default function SingleProductPage() {
   const router = useRouter();
 
-  // Wait for router query to be available
   if (!router.isReady) {
     return <p className="text-center py-10">Loading...</p>;
   }
 
   const { id } = router.query;
-
-  // Find the product by ID
   const product = products.find((p) => p.id === Number(id));
 
-
-  // If product is not found
   if (!product) {
     return <p className="text-center py-10">Product not found.</p>;
   }
 
   return (
-    <div className="container mx-auto px-6 py-8">
-      
-      <nav className="flex space-x-4 text-sm text-gray-500 mb-6">
-        <Link href="/">Home</Link>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <nav className="flex space-x-2 text-sm text-gray-500 mb-4 sm:mb-6">
+        <Link href="/" className="hover:text-gray-700">Home</Link>
         <span>/</span>
-        <Link href="/shop">Shop</Link>
+        <Link href="/shop" className="hover:text-gray-700">Shop</Link>
         <span>/</span>
         <span className="text-gray-700">{product.name}</span>
       </nav>
 
-     
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Product Image */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         <div>
           <Image
             src={product.image}
@@ -65,21 +57,19 @@ export default function SingleProductPage() {
           />
         </div>
 
-        {/* Product Information */}
         <div>
-          <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
-          <p className="text-lg text-yellow-600 font-semibold mb-4">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2">{product.name}</h1>
+          <p className="text-lg sm:text-xl text-yellow-600 font-semibold mb-4">
             Rs. {product.price.toLocaleString()}
           </p>
           <p className="text-gray-600 mb-4">
             Experience the elegance and comfort of the {product.name}. Perfect for modern homes.
           </p>
-
           <div className="flex space-x-4">
-            <button className="bg-black text-white px-6 py-2 rounded hover:bg-gray-700">
+            <button className="bg-black text-white px-4 sm:px-6 py-2 rounded hover:bg-gray-700">
               Add To Cart
             </button>
-            <FaHeart className="text-gray-500 cursor-pointer" />
+            <FaHeart className="text-gray-500 text-2xl cursor-pointer" />
           </div>
         </div>
       </div>

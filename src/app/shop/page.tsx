@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useState } from "react";
 
-// Products Data
 const products = [
   { id: 1, name: "Modern Modular Sofa", price: 25000, image: "/image/1.png" },
   { id: 2, name: "Dining Table with Chairs", price: 22000, image: "/image/2.png" },
@@ -26,14 +25,12 @@ const products = [
 ];
 
 export default function ShopPage() {
-  const [viewMode, setViewMode] = useState("grid"); // Grid or list view toggle
+  const [viewMode, setViewMode] = useState("grid");
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
-      {/* Header */}
       <Header bgColor="white" />
 
-      {/* Hero Section */}
       <div
         className="bg-cover bg-center h-64 flex items-center justify-center text-white"
         style={{ backgroundImage: `url('/image/Rectangle 1.png')` }}
@@ -41,16 +38,13 @@ export default function ShopPage() {
         <h1 className="text-4xl font-bold">Shop Our Collection</h1>
       </div>
 
-      {/* Filter Section */}
       <div className="container mx-auto px-6 py-4 flex justify-between items-center border-b border-gray-300 bg-white">
         <div className="flex items-center space-x-4 text-gray-600">
-          {/* Filter Placeholder */}
           <button className="hover:text-gray-800 flex items-center space-x-1">
             <span className="material-icons">filter_list</span>
             <span>Filter</span>
           </button>
 
-          {/* Grid/List View */}
           <div className="flex space-x-2">
             <button
               onClick={() => setViewMode("grid")}
@@ -68,7 +62,6 @@ export default function ShopPage() {
           <p className="text-sm text-gray-500">Showing 1–16 of 16 results</p>
         </div>
 
-        {/* Sort Section */}
         <div className="flex items-center space-x-4">
           <span>Sort by</span>
           <select className="border px-2 py-1 rounded text-gray-600">
@@ -80,7 +73,6 @@ export default function ShopPage() {
         </div>
       </div>
 
-      {/* Products Section */}
       <div className="container mx-auto px-6 py-8">
         <div
           className={`grid ${
@@ -88,7 +80,7 @@ export default function ShopPage() {
           } gap-6`}
         >
           {products.map((product) => (
-            <Link href={`/products/${product.id}`} key={product.id} legacyBehavior>
+            <Link href={`/products/${product.id}`} key={product.id}>
               <div className="border rounded-lg overflow-hidden shadow-md bg-white hover:shadow-lg transition-shadow duration-200 cursor-pointer">
                 <Image
                   src={product.image}
@@ -110,7 +102,6 @@ export default function ShopPage() {
         </div>
       </div>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
