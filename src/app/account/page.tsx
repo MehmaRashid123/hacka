@@ -6,32 +6,28 @@ import Image from "next/image";
 const AccountPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header Section */}
       <Header bgColor="white" />
+
       <div
         className="bg-cover bg-center h-64 flex items-center justify-center text-white"
-        style={{
-          backgroundImage: `url('/image/Rectangle 1.png')`,
-        }}
+        style={{ backgroundImage: `url('/image/Rectangle 1.png')` }}
       >
         <div className="flex flex-col items-center justify-center px-4 py-8">
           <div className="mb-4">
             <Image
               src="/image/ml.png"
               alt="Logo"
+              width="500"
+              height="500"
               className="h-16 w-auto"
             />
           </div>
-          <div className="text-center text-black px-4 py-2 rounded font-[500] text-[32px] sm:text-[40px] lg:text-[48px] font-poppins">
-            <h1 className="text-4xl sm:text-5xl font-bold">About</h1>
-            <p className="text-sm sm:text-base mt-2">Home &gt; About</p>
-          </div>
-          </div>
-          </div>
+          <h1 className="text-4xl font-bold text-black">Account</h1>
+          <p className="text-sm sm:text-base mt-2">Home &gt; Account</p>
+        </div>
+      </div>
 
-      
       <main className="container mx-auto flex flex-col lg:flex-row mt-8 lg:mt-16 px-4 sm:px-6 lg:px-8">
-      
         <div className="w-full lg:w-1/2 mb-8 lg:mb-0 px-2 sm:px-4 lg:px-6">
           <h2 className="text-2xl font-semibold mb-6">Log In</h2>
           <form className="space-y-4">
@@ -77,7 +73,6 @@ const AccountPage = () => {
           </p>
         </div>
 
-      
         <div className="w-full lg:w-1/2 px-2 sm:px-4 lg:px-6">
           <h2 className="text-2xl font-semibold mb-6">Register</h2>
           <form className="space-y-4">
@@ -105,7 +100,6 @@ const AccountPage = () => {
         </div>
       </main>
 
-      
       <section className="bg-gray-100 py-8 mt-8">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center text-center lg:text-left px-4 sm:px-6 lg:px-8">
           <div className="w-full lg:w-1/3 px-2 sm:px-4">
@@ -129,7 +123,6 @@ const AccountPage = () => {
         </div>
       </section>
 
-   
       <Footer />
     </div>
   );

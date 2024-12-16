@@ -11,7 +11,6 @@ const ContactPage = () => {
 
       <Header bgColor="white" />
 
-
       <div
         className="bg-cover bg-center h-64 flex items-center justify-center text-white"
         style={{
@@ -19,33 +18,22 @@ const ContactPage = () => {
         }}
       >
         <div className="flex flex-col items-center justify-center px-4 py-8">
-
           <div className="mb-4">
-            <Image src="/image/ml.png" alt="Logo" width="500"
-              height="300" className="h-16 w-auto" />
+            <Image src="/image/ml.png" alt="Logo" width="500" height="300" className="h-16 w-auto" />
           </div>
-
-
-          <div className="text-center text-black px-4 py-2 rounded font-[500] text-[48px] font-poppins">
-            <h1 className="text-4xl font-bold">Contact</h1>
+          <div className="text-center text-black px-4 py-2 rounded font-medium text-4xl font-poppins">
+            <h1 className="font-bold">Contact</h1>
             <p className="text-sm mt-2">Home &gt; Contact</p>
           </div>
         </div>
-
-
       </div>
 
       <section className="container mx-auto px-6 md:px-16 lg:px-32 py-16">
-        <h2 className="text-center text-2xl font-bold mb-4">
-          Get In Touch With Us
-        </h2>
+        <h2 className="text-center text-2xl font-bold mb-4">Get In Touch With Us</h2>
         <p className="text-center text-gray-600 mb-12">
-          For more information about our products and services, please feel free
-          to drop us <br /> a line. Our staff is always here to help you out. Do not
-          hesitate!
+          For more information about our products and services, please feel free to drop us a line. Our staff is always here to help you out. Do not hesitate!
         </p>
         <div className="flex flex-col md:flex-row gap-12">
-
           <div className="md:w-1/2 space-y-8">
             <div className="flex items-start space-x-4">
               <FaMapMarkerAlt className="text-black text-xl mt-1" />
@@ -72,40 +60,17 @@ const ContactPage = () => {
             </div>
           </div>
 
-
           <div className="md:w-1/2">
             <form className="space-y-6">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full border px-4 py-3 rounded-lg"
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full border px-4 py-3 rounded-lg"
-              />
-              <input
-                type="text"
-                placeholder="Subject (optional)"
-                className="w-full border px-4 py-3 rounded-lg"
-              />
-              <textarea
-                placeholder="Message"
-                rows={5}
-                className="w-full border px-4 py-3 rounded-lg"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-black text-white py-3 rounded-lg hover:bg-slate-500"
-              >
-                Submit
-              </button>
+              <input type="text" placeholder="Your Name" className="w-full border px-4 py-3 rounded-lg" />
+              <input type="email" placeholder="Email Address" className="w-full border px-4 py-3 rounded-lg" />
+              <input type="text" placeholder="Subject (optional)" className="w-full border px-4 py-3 rounded-lg" />
+              <textarea placeholder="Message" rows={5} className="w-full border px-4 py-3 rounded-lg"></textarea>
+              <button type="submit" className="w-full bg-black text-white py-3 rounded-lg hover:bg-slate-500">Submit</button>
             </form>
           </div>
         </div>
       </section>
-
 
       <section className="bg-gray-100 py-12">
         <div className="container mx-auto flex flex-col md:flex-row justify-around text-center gap-8">
@@ -126,7 +91,6 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-
 
       <Footer />
     </div>

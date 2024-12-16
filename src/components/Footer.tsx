@@ -1,12 +1,12 @@
-"use client"; // Mark this file as a client component
+"use client";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-100 py-8 md:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-20">
-        {/* Footer Top Section */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Address Section */}
+          
           <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4">Address</h3>
             <p className="text-gray-600 leading-relaxed">
@@ -15,7 +15,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Links Section */}
           <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4">Links</h3>
             <ul className="space-y-2">
@@ -42,38 +41,27 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Help Section */}
           <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4">Help</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/payment-options"
-                  className="text-gray-600 hover:text-gray-900"
-                >
+                <a href="/payment-options" className="text-gray-600 hover:text-gray-900">
                   Payment Options
                 </a>
               </li>
               <li>
-                <a
-                  href="/returns"
-                  className="text-gray-600 hover:text-gray-900"
-                >
+                <a href="/returns" className="text-gray-600 hover:text-gray-900">
                   Returns
                 </a>
               </li>
               <li>
-                <a
-                  href="/privacy-policy"
-                  className="text-gray-600 hover:text-gray-900"
-                >
+                <a href="/privacy-policy" className="text-gray-600 hover:text-gray-900">
                   Privacy Policy
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter Section */}
           <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4">Newsletter</h3>
             <p className="text-gray-600 mb-4">
@@ -95,7 +83,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom Section */}
         <div className="border-t border-gray-300 pt-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p className="text-gray-600">
             © {new Date().getFullYear()} ModelzHouse. All rights reserved.

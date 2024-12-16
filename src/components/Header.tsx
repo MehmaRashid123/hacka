@@ -1,20 +1,20 @@
-"use client"; // Mark this file as a client component
+"use client";
 
 import { FaUser, FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 
 interface HeaderProps {
-  bgColor?: string; // Accept bgColor prop to modify background color
+  bgColor?: string; 
 }
 
 const Header = ({ bgColor = "#FBEBB5" }: HeaderProps) => {
   return (
     <header
       className="flex justify-between items-center w-full py-4 px-4 md:px-6 lg:px-10"
-      style={{ backgroundColor: bgColor }} // Dynamically set background color
+      style={{ backgroundColor: bgColor }} 
     >
-      {/* Navigation Links */}
-      <nav className=" pl-[250px] md:flex font-poppins flex items-center justify-between text-[14px] sm:text-[16px] space-x-4 sm:space-x-6 lg:space-x-8">
+    
+      <nav className="pl-4 md:flex font-poppins flex items-center justify-between text-[14px] sm:text-[16px] space-x-4 sm:space-x-6 lg:space-x-8">
         <Link href="/" className="text-gray-700 hover:text-black font-medium transition-colors duration-200">
           Home
         </Link>
@@ -29,8 +29,7 @@ const Header = ({ bgColor = "#FBEBB5" }: HeaderProps) => {
         </Link>
       </nav>
 
-      {/* Icons */}
-      <div className="pr-[100px] flex items-center space-x-3 sm:space-x-4 lg:space-x-6">
+      <div className="pr-4 flex items-center space-x-3 sm:space-x-4 lg:space-x-6">
         <Link href="/account" className="text-gray-700 hover:text-black cursor-pointer transition-colors duration-200">
           <FaUser className="w-4 h-4 sm:w-5 sm:h-5" aria-label="Account" />
         </Link>
@@ -45,10 +44,8 @@ const Header = ({ bgColor = "#FBEBB5" }: HeaderProps) => {
         </Link>
       </div>
 
-      {/* Mobile Menu (visible only on smaller screens) */}
       <div className="block md:hidden">
         <button className="text-gray-700 hover:text-black">
-          {/* Add mobile menu toggle logic here */}
           Menu
         </button>
       </div>

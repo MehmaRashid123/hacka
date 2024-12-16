@@ -2,16 +2,13 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
-import { MdDeliveryDining, MdAssignmentReturn, MdPayment } from "react-icons/md";
-
-
-const ContactPage = () => {
+const Cart = () => {
   return (
-    <div>
-      <Header bgColor="white"/>
-    <div className="bg-gray-50 min-h-screen flex flex-col">
+    <div className="bg-gray-50 min-h-screen">
+      <Header bgColor="white" />
+
       <div
         className="bg-cover bg-center h-64 flex items-center justify-center text-white"
         style={{
@@ -20,111 +17,70 @@ const ContactPage = () => {
       >
         <div className="flex flex-col items-center justify-center px-4 py-8">
           <div className="mb-4">
-            <Image
-              src="/image/ml.png"
-              alt="Logo"
-              width="500" 
-          height="300"
-              className="h-16 w-auto"/>
+            <Image src="/image/ml.png" alt="Logo" width="500" height="300" className="h-16 w-auto" />
           </div>
-          <div className="text-center text-black px-4 py-2 rounded font-[500] text-[32px] sm:text-[40px] lg:text-[48px] font-poppins">
-            <h1 className="text-4xl sm:text-5xl font-bold">Cart</h1>
-            <p className="text-sm sm:text-base mt-2">Home &gt; Cart</p>
+          <div className="text-center text-black px-4 py-2 rounded font-medium text-4xl font-poppins">
+            <h1 className="font-bold">Cart</h1>
+            <p className="text-sm mt-2">Home &gt; Cart</p>
           </div>
         </div>
       </div>
 
-      <section className="container mx-auto px-4 sm:px-6 lg:px-16 py-12">
-        <h2 className="text-center text-2xl sm:text-3xl font-bold mb-4">
-          Get In Touch With Us
-        </h2>
-        <p className="text-center text-gray-600 mb-8 sm:mb-12">
-          For more information about our products and services, please feel free
-          to drop us a line. Our staff is always here to help you out. Do not hesitate!
-        </p>
-        <div className="flex flex-col md:flex-row gap-6 md:gap-12 flex-wrap">
-          <div className="md:w-1/2 space-y-8">
-            <div className="flex items-start space-x-4">
-              <FaMapMarkerAlt className="text-black text-2xl mt-1" />
-              <div>
-                <h3 className="font-bold text-lg">Address</h3>
-                <p>1234 Street Name, New York, USA</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <FaPhoneAlt className="text-black text-2xl mt-1" />
-              <div>
-                <h3 className="font-bold text-lg">Phone</h3>
-                <p>+1 234 567 890</p>
-                <p>+1 987 654 321</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <FaClock className="text-black text-2xl mt-1" />
-              <div>
-                <h3 className="font-bold text-lg">Working Time</h3>
-                <p>Monday–Friday: 9:00–20:00</p>
-                <p>Saturday–Sunday: 9:00–17:00</p>
-              </div>
-            </div>
+      <section className="container mx-auto my-8 px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2">
+            <table className="w-full bg-white shadow-md rounded-lg">
+              <thead>
+                <tr className="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                  <th className="py-3 px-6 text-left">Product</th>
+                  <th className="py-3 px-6 text-center">Price</th>
+                  <th className="py-3 px-6 text-center">Quantity</th>
+                  <th className="py-3 px-6 text-right">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-600 text-sm font-light">
+                <tr className="border-b border-gray-200 hover:bg-gray-100">
+                  <td className="py-3 px-6 text-left">
+                    <div className="flex items-center">
+                      <Image src="/image/14.png" alt="Logo" width="500" height="300" className="h-16 w-auto " />
+                      <span>Ergonomic Chair</span>
+                    </div>
+                  </td>
+                  <td className="py-3 px-6 text-center">Rs. 20,000.00</td>
+                  <td className="py-3 px-6 text-center">1</td>
+                  <td className="py-3 px-6 text-right">Rs. 20,000.00</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <div className="md:w-1/2">
-            <form className="space-y-6">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full border px-4 py-3 rounded-lg"
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full border px-4 py-3 rounded-lg"
-              />
-              <input
-                type="text"
-                placeholder="Subject (optional)"
-                className="w-full border px-4 py-3 rounded-lg"
-              />
-              <textarea
-                placeholder="Message"
-                rows={5}
-                className="w-full border px-4 py-3 rounded-lg"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-black text-white py-3 rounded-lg hover:bg-slate-500"
-              >
-                Submit
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-4">Cart Totals</h2>
+            <div className="flex justify-between text-gray-600 mb-2">
+              <span>Subtotal:</span>
+              <span>Rs. 20,000.00</span>
+            </div>
+            <div className="flex justify-between text-gray-600 mb-4">
+              <span>Tax:</span>
+              <span>Rs. 2,000.00</span>
+            </div>
+            <div className="flex justify-between text-xl font-semibold">
+              <span>Total:</span>
+              <span>Rs. 22,000.00</span>
+            </div>
+
+            <Link href="/checkout">
+              <button className="mt-6 w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">
+                Check Out
               </button>
-            </form>
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-100 py-12">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center px-4 sm:px-6 lg:px-16">
-          <div className="flex flex-col items-center">
-            <MdDeliveryDining className="text-black text-5xl mb-4" />
-            <h3 className="font-bold text-lg">Free Delivery</h3>
-            <p>On all orders over ₹500</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <MdAssignmentReturn className="text-black text-5xl mb-4" />
-            <h3 className="font-bold text-lg">90 Days Return</h3>
-            <p>If goods have problems</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <MdPayment className="text-black text-5xl mb-4" />
-            <h3 className="font-bold text-lg">Secure Payment</h3>
-            <p>100% secure payment</p>
-          </div>
-        </div>
-      </section>
-    </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 };
 
-export default ContactPage;
+export default Cart;

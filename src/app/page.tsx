@@ -1,4 +1,4 @@
-"use client"; // Tell Next.js this file is a client-side rendered component
+"use client"; 
 
 
 import { useState } from "react";
@@ -16,22 +16,20 @@ export default function Home() {
 
     return (
         <div className="relative">
-            {/* Header */}
+          
             <Header />
 
-            {/* Hero Sections */}
+            
             <Hero />
             <Hero1 />
             <Hero2 />
             <Hero3 />
             <Hero4/>
             <Hero5/>
+        
             
-
-            {/* Footer */}
             <Footer />
 
-            {/* Floating Cart Icon */}
             <button
                 onClick={toggleCart}
                 className="fixed bottom-6 right-6 bg-yellow-500 text-white rounded-full p-4 shadow-lg hover:bg-yellow-600 transition-colors duration-200"
@@ -39,7 +37,7 @@ export default function Home() {
                 🛒
             </button>
 
-            {/* Sliding Cart */}
+        
             <SlidingCart isOpen={isCartOpen} toggleCart={toggleCart} />
         </div>
     );
