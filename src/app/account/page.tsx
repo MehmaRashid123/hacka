@@ -1,17 +1,38 @@
 import React from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Image from "next/image";
 
 const AccountPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header Section */}
       <Header bgColor="white" />
+      <div
+        className="bg-cover bg-center h-64 flex items-center justify-center text-white"
+        style={{
+          backgroundImage: `url('/image/Rectangle 1.png')`,
+        }}
+      >
+        <div className="flex flex-col items-center justify-center px-4 py-8">
+          <div className="mb-4">
+            <Image
+              src="/image/ml.png"
+              alt="Logo"
+              className="h-16 w-auto"
+            />
+          </div>
+          <div className="text-center text-black px-4 py-2 rounded font-[500] text-[32px] sm:text-[40px] lg:text-[48px] font-poppins">
+            <h1 className="text-4xl sm:text-5xl font-bold">About</h1>
+            <p className="text-sm sm:text-base mt-2">Home &gt; About</p>
+          </div>
+          </div>
+          </div>
 
-      {/* Main Content */}
-      <main className="container mx-auto flex flex-col lg:flex-row mt-8 lg:mt-16 px-4 lg:px-0">
-        {/* Login Form */}
-        <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+      
+      <main className="container mx-auto flex flex-col lg:flex-row mt-8 lg:mt-16 px-4 sm:px-6 lg:px-8">
+      
+        <div className="w-full lg:w-1/2 mb-8 lg:mb-0 px-2 sm:px-4 lg:px-6">
           <h2 className="text-2xl font-semibold mb-6">Log In</h2>
           <form className="space-y-4">
             <div>
@@ -44,7 +65,7 @@ const AccountPage = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-2 bg-black text-white font-medium rounded-md"
+              className="w-full py-2 bg-black text-white font-medium rounded-md hover:bg-gray-800"
             >
               Log In
             </button>
@@ -56,8 +77,8 @@ const AccountPage = () => {
           </p>
         </div>
 
-        {/* Register Form */}
-        <div className="w-full lg:w-1/2">
+      
+        <div className="w-full lg:w-1/2 px-2 sm:px-4 lg:px-6">
           <h2 className="text-2xl font-semibold mb-6">Register</h2>
           <form className="space-y-4">
             <div>
@@ -76,7 +97,7 @@ const AccountPage = () => {
             </p>
             <button
               type="submit"
-              className="w-full py-2 bg-black text-white font-medium rounded-md"
+              className="w-full py-2 bg-black text-white font-medium rounded-md hover:bg-gray-800"
             >
               Register
             </button>
@@ -84,22 +105,22 @@ const AccountPage = () => {
         </div>
       </main>
 
-      {/* Features Section */}
+      
       <section className="bg-gray-100 py-8 mt-8">
-        <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center text-center lg:text-left px-4 lg:px-0">
-          <div className="w-full lg:w-1/3 px-4">
+        <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center text-center lg:text-left px-4 sm:px-6 lg:px-8">
+          <div className="w-full lg:w-1/3 px-2 sm:px-4">
             <h3 className="text-lg font-medium">Free Delivery</h3>
             <p className="text-gray-600">
               For all orders over $50, consectetur adipiscing elit.
             </p>
           </div>
-          <div className="w-full lg:w-1/3 px-4">
+          <div className="w-full lg:w-1/3 px-2 sm:px-4">
             <h3 className="text-lg font-medium">90 Days Return</h3>
             <p className="text-gray-600">
               If goods have problems, consectetur adipiscing elit.
             </p>
           </div>
-          <div className="w-full lg:w-1/3 px-4">
+          <div className="w-full lg:w-1/3 px-2 sm:px-4">
             <h3 className="text-lg font-medium">Secure Payment</h3>
             <p className="text-gray-600">
               100% secure payment, consectetur adipiscing elit.
@@ -108,7 +129,7 @@ const AccountPage = () => {
         </div>
       </section>
 
-      {/* Footer Section */}
+   
       <Footer />
     </div>
   );
