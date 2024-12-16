@@ -1,9 +1,10 @@
 "use client"; // Tell Next.js this file is a client-side rendered component
 
+
 import { useState } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Hero, { Hero1, Hero2, Hero3} from "@/components/Hero";
+import Hero, { Hero1, Hero2, Hero3, Hero4, Hero5} from "@/components/Hero";
 import SlidingCart from "@/components/Slidingcart";
 
 export default function Home() {
@@ -23,6 +24,8 @@ export default function Home() {
             <Hero1 />
             <Hero2 />
             <Hero3 />
+            <Hero4/>
+            <Hero5/>
             
 
             {/* Footer */}

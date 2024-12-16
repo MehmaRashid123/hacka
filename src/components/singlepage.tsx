@@ -1,154 +1,88 @@
-import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
+import { FaHeart } from "react-icons/fa";
+
+const products = [
+  { id: 1, name: "Modern Modular Sofa", price: 25000, image: "/image/1.png" },
+  { id: 2, name: "Dining Table with Chairs", price: 25000, image: "/image/2.png" },
+  { id: 3, name: "Outdoor Bar Table", price: 25000, image: "/image/3.png" },
+  { id: 4, name: "Plain Console with Rack", price: 25000, image: "/image/4.png" },
+  { id: 5, name: "Circular Coffee Table", price: 15000, image: "/image/5.png" },
+  { id: 6, name: "Rectangular Coffee Table", price: 22500, image: "/image/6.png" },
+  { id: 7, name: "Simple Wooden Stool", price: 10000, image: "/image/7.png" },
+  { id: 8, name: "Elegant Wooden Cabinet", price: 20000, image: "/image/8.png" },
+  { id: 9, name: "Luxury Sofa Set", price: 115000, image: "/image/9.png" },
+  { id: 10, name: "Outdoor Sofa Set", price: 244000, image: "/image/10.png" },
+  { id: 11, name: "Glass Coffee Table", price: 18000, image: "/image/11.png" },
+  { id: 12, name: "Leather Recliner Chair", price: 45000, image: "/image/12.png" },
+  { id: 13, name: "Marble Dining Table", price: 52000, image: "/image/13.png" },
+  { id: 14, name: "Wooden Bed Frame", price: 35000, image: "/image/14.png" },
+  { id: 15, name: "Rattan Lounge Chair", price: 12000, image: "/image/15.png" },
+  { id: 16, name: "Teak Wood Bookshelf", price: 23000, image: "/image/16.png" },
+];
 
 export default function SingleProductPage() {
+  const router = useRouter();
+
+  // Wait for router query to be available
+  if (!router.isReady) {
+    return <p className="text-center py-10">Loading...</p>;
+  }
+
+  const { id } = router.query;
+
+  // Find the product by ID
+  const product = products.find((p) => p.id === Number(id));
+
+
+  // If product is not found
+  if (!product) {
+    return <p className="text-center py-10">Product not found.</p>;
+  }
+
   return (
-    <div className="font-sans">
-      {/* Header */}
-      <header className="bg-white shadow p-4 flex justify-between items-center">
-        <nav className="flex space-x-4 text-sm font-medium">
-          <a href="/" className="hover:text-gray-700">Home</a>
-          <span>/</span>
-          <a href="/shop" className="hover:text-gray-700">Shop</a>
-          <span>/</span>
-          <a href="/shop/asgaard-sofa" className="text-gray-500">Asgaard Sofa</a>
-        </nav>
-        <div className="flex space-x-4">
-          <FaHeart className="cursor-pointer" />
-          <FaShoppingCart className="cursor-pointer" />
-        </div>
-      </header>
+    <div className="container mx-auto px-6 py-8">
+      
+      <nav className="flex space-x-4 text-sm text-gray-500 mb-6">
+        <Link href="/">Home</Link>
+        <span>/</span>
+        <Link href="/shop">Shop</Link>
+        <span>/</span>
+        <span className="text-gray-700">{product.name}</span>
+      </nav>
 
-      {/* Product Details */}
-      <main className="px-4 py-8 md:px-10 lg:px-20">
-        {/* Product Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Product Images */}
-          <div>
-            <img
-              src="/sofa-main.jpg"
-              alt="Asgaard Sofa"
-              className="w-full h-auto rounded-lg"
-            />
-            <div className="flex space-x-2 mt-4">
-              <img
-                src="/sofa-thumb1.jpg"
-                alt="Sofa Thumbnail 1"
-                className="w-20 h-20 object-cover rounded-md border"
-              />
-              <img
-                src="/sofa-thumb2.jpg"
-                alt="Sofa Thumbnail 2"
-                className="w-20 h-20 object-cover rounded-md border"
-              />
-              <img
-                src="/sofa-thumb3.jpg"
-                alt="Sofa Thumbnail 3"
-                className="w-20 h-20 object-cover rounded-md border"
-              />
-            </div>
-          </div>
-
-          {/* Product Info */}
-          <div>
-            <h1 className="text-2xl font-bold">Asgaard Sofa</h1>
-            <p className="text-lg text-gray-500 mt-2">Rs. 25,000.00</p>
-            <p className="text-sm text-gray-400 mt-1">(3 customer reviews)</p>
-
-            {/* Colors */}
-            <div className="mt-4">
-              <h3 className="font-semibold">Colors:</h3>
-              <div className="flex space-x-2 mt-2">
-                <span className="w-6 h-6 rounded-full bg-gray-200 border"></span>
-                <span className="w-6 h-6 rounded-full bg-black border"></span>
-                <span className="w-6 h-6 rounded-full bg-blue-500 border"></span>
-              </div>
-            </div>
-
-            {/* Add to Cart */}
-            <div className="mt-6 flex items-center space-x-4">
-              <input
-                type="number"
-                defaultValue={1}
-                className="w-16 border p-2 rounded text-center"
-              />
-              <button className="bg-black text-white px-6 py-2 rounded hover:bg-gray-700">
-                Add To Cart
-              </button>
-            </div>
-
-            <div className="mt-4 flex items-center space-x-4 text-sm text-gray-500">
-              <FaHeart className="text-gray-700 cursor-pointer" />
-              <p>Add to Wishlist</p>
-            </div>
-          </div>
+     
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Product Image */}
+        <div>
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={500}
+            height={500}
+            className="w-full h-auto rounded-lg"
+          />
         </div>
 
-        {/* Description Section */}
-        <div className="mt-12">
-          <div className="flex space-x-8 border-b">
-            <button className="pb-2 border-b-2 border-black">Description</button>
-            <button className="pb-2">Additional Information</button>
-            <button className="pb-2">Reviews (5)</button>
-          </div>
-          <div className="mt-6 text-gray-600">
-            <p>
-              The Asgaard Sofa offers unmatched comfort and style. With its sleek, minimalist design,
-              it’s perfect for any modern home. Featuring premium materials, it’s built to last while
-              adding elegance to your space.
-            </p>
+        {/* Product Information */}
+        <div>
+          <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
+          <p className="text-lg text-yellow-600 font-semibold mb-4">
+            Rs. {product.price.toLocaleString()}
+          </p>
+          <p className="text-gray-600 mb-4">
+            Experience the elegance and comfort of the {product.name}. Perfect for modern homes.
+          </p>
+
+          <div className="flex space-x-4">
+            <button className="bg-black text-white px-6 py-2 rounded hover:bg-gray-700">
+              Add To Cart
+            </button>
+            <FaHeart className="text-gray-500 cursor-pointer" />
           </div>
         </div>
-
-        {/* Related Products */}
-        <div className="mt-12">
-          <h2 className="text-xl font-bold mb-4">Related Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <img
-                src="/product1.jpg"
-                alt="Product 1"
-                className="w-full h-40 object-cover rounded-md"
-              />
-              <h3 className="mt-2 text-sm font-medium">Product 1</h3>
-              <p className="text-gray-500">Rs. 25,000.00</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/product2.jpg"
-                alt="Product 2"
-                className="w-full h-40 object-cover rounded-md"
-              />
-              <h3 className="mt-2 text-sm font-medium">Product 2</h3>
-              <p className="text-gray-500">Rs. 25,000.00</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/product3.jpg"
-                alt="Product 3"
-                className="w-full h-40 object-cover rounded-md"
-              />
-              <h3 className="mt-2 text-sm font-medium">Product 3</h3>
-              <p className="text-gray-500">Rs. 25,000.00</p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/product4.jpg"
-                alt="Product 4"
-                className="w-full h-40 object-cover rounded-md"
-              />
-              <h3 className="mt-2 text-sm font-medium">Product 4</h3>
-              <p className="text-gray-500">Rs. 25,000.00</p>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-100 py-4 mt-12 text-center">
-        <p className="text-sm text-gray-500">
-          2024 My Furniture Store. All rights reserved.
-        </p>
-      </footer>
+      </div>
     </div>
   );
 }
