@@ -42,6 +42,7 @@ async function fetchProducts(): Promise<Product[]> {
 const Shop = async () => {
   const products = await fetchProducts();
 
+
   return (
     <div className="bg-gray-50">
       <div className="max-w-screen-2xl container mx-auto pb-8 px-4">
@@ -53,7 +54,7 @@ const Shop = async () => {
         {/* Banner Section */}
         <div className="relative text-black">
           <Image
-            src="/shop.jpeg" // Replace with the correct image file path
+            src="/image/Rectangle 1.png" // Replace with the correct image file path
             alt="Shop Banner"
             height={400}
             width={1600}
