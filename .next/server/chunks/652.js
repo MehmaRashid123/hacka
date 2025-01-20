@@ -1,0 +1,1 @@
+"use strict";exports.id=652,exports.ids=[652],exports.modules={71652:(e,r,t)=>{t.r(r),t.d(r,{default:()=>o});var n=t(79334),s=t(58009);function o(){let e=(0,n.useRouter)();return(0,s.useEffect)(()=>{let r=new AbortController,{signal:t}=r;return window.addEventListener("online",()=>e.refresh(),{passive:!0,signal:t}),()=>r.abort()},[e]),null}o.displayName="RefreshOnReconnect"}};

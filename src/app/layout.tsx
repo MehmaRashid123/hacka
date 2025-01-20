@@ -3,7 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import CartBarPage from "./cartbar/page";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+
 
 // Define fonts
 const inter = Inter({ subsets: ["latin"] });
