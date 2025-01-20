@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import CartBarPage from "./cartbar/page";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 // Define fonts
 const inter = Inter({ subsets: ["latin"] });
@@ -25,6 +27,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className={poppins.className}>
         {children} {/* Render child components */}
+        <Footer/>
         <CartBarPage />
       </body>
     </html>

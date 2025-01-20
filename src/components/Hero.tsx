@@ -1,172 +1,221 @@
-import Image from "next/image";
-import Link from "next/link";
+import Link from 'next/link';
+import React from 'react';
+import Image from 'next/image';
+import { IoTimeOutline } from 'react-icons/io5';
+import { CiCalendar } from 'react-icons/ci';
+import Header from './Header';
 
-const Hero = () => {
-  return (
-    <section className="flex flex-col lg:flex-row justify-between items-center w-full lg:h-[600px] py-16 px-6 lg:px-10 bg-[#FBEBB5]">
-      <div className="text-center lg:text-left mb-10 lg:mb-0">
-        <h1 className="font-poppins font-medium text-3xl lg:text-5xl text-gray-800 leading-snug mb-6">
-          Rocket single <br /> seater
-        </h1>
-        <button className="px-5 py-3 text-white bg-black rounded-lg hover:bg-gray-800 transition">
-          Shop Now
-        </button>
-      </div>
-
-      <div className="w-full max-w-sm lg:max-w-lg">
-        <Image
-          src="/image/hchair.png"
-          alt="Rocket single seater"
-          width={500}
-          height={300}
-          className="w-full h-auto rounded-lg"
-        />
-      </div>
-    </section>
-  );
-};
-
-export const Hero1 = () => {
-  return (
-    <section className="bg-[#FAF4F4] py-16 px-6 md:px-12">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        {[...Array(2)].map((_, i) => (
-          <div key={i} className="text-center">
-            <Image
-              src={`/image/table${i + 2}.png`}
-              alt="Side table"
-              width={500}
-              height={300}
-              className="mx-auto rounded-lg shadow-lg"
-            />
-            <h3 className="text-xl font-semibold text-gray-800 mt-4">Side table</h3>
-            <a href="#" className="text-black hover:underline font-medium">
-              View More
-            </a>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-export const Hero2 = () => {
-  const products = [
-    { id: 1, title: "Trenton modular sofa_3", price: "Rs. 25,000.00", image: "/image/1.png" },
-    { id: 2, title: "Granite dining table", price: "Rs. 25,000.00", image: "/image/2.png" },
-    { id: 3, title: "Outdoor bar table", price: "Rs. 25,000.00", image: "/image/3.png" },
-    { id: 4, title: "Plain console", price: "Rs. 25,000.00", image: "/image/4.png" },
-  ];
-
-  return (
-    <section className="bg-[#FFFFFF] font-poppins py-16 px-6 lg:px-20">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Top Picks For You</h2>
-        <p className="text-gray-600 mb-10">
-          Find a bright ideal to suit your taste with our great selection of lights.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <div key={product.id} className="text-center">
-              <Image
-                src={product.image}
-                alt={product.title}
-                width={300}
-                height={200}
-                className="w-full h-auto object-cover rounded-lg shadow-md"
-              />
-              <h3 className="mt-4 text-lg font-medium text-gray-700">{product.title}</h3>
-              <p className="mt-2 text-xl font-bold text-gray-900">{product.price}</p>
+function Hero() {
+    return (
+        <div className="bg-[#fbebb5]  mx-auto  w-full">
+            <Header />
+            <div className="flex flex-col  md:mx-36 justify-around md:flex-row max-w-screen-2xl  p-20">
+                {/* Text Content */}
+                <div className=" my-auto text-center md:text-left">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold my-6">Rocket single</h1>
+                    <span className="text-3xl sm:text-4xl md:text-6xl font-semibold block mb-6">seater</span>
+                    
+                        <Link href="./shop" className="text-2xl mt-8 underline underline-offset-8 text-black-600 ">Shop Now</Link>
+                    
+                </div>
+                {/* Image Section */}
+                <div className="mt-6 md:mt-0">
+                    <Image
+                        src="/image/hchair.png"
+                        height={600}
+                        width={600}
+                        alt="A stylish rocket single seater"
+                        className="rounded-lg "
+                    />
+                </div>
             </div>
-          ))}
-        </div>
+            <div>
+                <div className='flex flex-col md:flex-row bg-[#F4F4F4] justify-around mx-auto p-10'>
+                    <div>
+                        <Image
+                            alt=''
+                            className=''
+                            height={500}
+                            width={500}
+                            src='/image/table2.png'
+                        />
+                        <h3 className='text-3xl font-medium'>Side table</h3>
+                        <Link href='/'>
+                            <p className="text-xl mt-8 underline underline-offset-8 text-black-600 ">View More</p>
+                        </Link>
+                    </div>
+                    <div>
+                        <Image
+                            alt=''
+                            className=''
+                            height={500}
+                            width={500}
+                            src='/image/table3.png'
+                        />
+                        <h3 className='text-3xl font-medium'>Side table</h3>
+                        <Link href='/'>
+                            <p className="text-xl mt-8 underline underline-offset-8 text-black-600 ">View More</p>
+                        </Link>
+                    </div>
+                </div>
+                <div className=" md:flex-row bg-[#FFFFFF] justify-around mx-auto py-10 px-4">
+                    {/* Header Section */}
+                    <div className="my-10 text-center mx-auto ">
+                        <h2 className="text-3xl font-medium">Top Picks For You</h2>
+                        <p className="text-gray-500 mt-10">
+                            Find a bright ideal to suit your taste with our great selection of suspension, floor, and table lights.
+                        </p>
+                    </div>
 
-        <div className="pt-10 underline cursor-pointer">View all</div>
-      </div>
-    </section>
-  );
-};
+                    {/* Product List */}
+                    <div className="flex flex-wrap justify-center md:justify-start  gap-6 ">
+                        {/* Product Item */}
+                        {[
+                            { src: '/image/1.png', name: 'Trenton modular sofa_3', price: 'Rs. 25,000.00' },
+                            { src: '/image/2.png', name: 'Granite dining table with dining chair', price: 'Rs. 25,000.00' },
+                            { src: '/image/3.png', name: 'Outdoor bar table and stool', price: 'Rs. 25,000.00' },
+                            { src: '/image/4.png', name: 'Plain console with teak', price: 'Rs. 25,000.00' },
+                        ].map((item, index) => (
+                            <div key={index} className="flex flex-col text-left mx-auto h-[300px] w-[350px] ">
+                                <Image
+                                    src={item.src}
+                                    alt={item.name}
+                                    height={300}
+                                    width={350}
+                                    className="rounded-lg h-[300px] w-[300px] object-cover"
+                                />
+                                <p className="text-sm font-medium  ">{item.name}</p>
+                                <h3 className="text-xl font-semibold">{item.price}</h3>
+                            </div>
+                        ))}
+                    </div>
 
-export const Hero3 = () => {
-  return (
-    <section className="bg-[#FFF9E5] py-20">
-      <div className="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-10">
-        <div className="lg:w-1/2">
-          <Image
-            src="/image/table8.png"
-            alt="Asgaard Sofa"
-            width={983}
-            height={799}
-            className="rounded-md w-full h-auto"
-          />
-        </div>
-        <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-2">New Arrivals</h1>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">Asgaard Sofa</h2>
-          <button className="border-2 border-black text-black px-6 py-3 hover:bg-gray-100 transition">
-            Order Now
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-};
+                    <p className="text-xl text-center mx-auto my-20 underline underline-offset-8 text-black-600 ">View More</p>
+                </div>
 
-export const Hero4 = () => {
-  const blogPosts = [
-    { id: 1, title: "Going all-in with millennial design", date: "5 min read | Oct 2023", image: "/image/blog1.png" },
-    { id: 2, title: "Going all-in with millennial design", date: "5 min read | Oct 2023", image: "/image/blog2.png" },
-    { id: 3, title: "Going all-in with millennial design", date: "5 min read | Oct 2023", image: "/image/blog3.png" },
-  ];
-
-  return (
-    <section className="bg-white py-16 px-6 lg:px-20">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Our Blogs</h2>
-        <p className="text-gray-600 mb-12">Find a bright ideal to suit your taste with our great selection.</p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <div key={post.id} className="bg-gray-50 rounded-md shadow-md">
-              <Image
-                src={post.image}
-                alt={post.title}
-                width={500}
-                height={300}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{post.title}</h3>
-                <p className="text-gray-500 text-sm">{post.date}</p>
-                <Link href="/blog">
-                  <button className="mt-4 text-blue-600 hover:underline">Read More</button>
-                </Link>
-              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+            <div className="flex flex-col bg-[#fff9e5] justify-around md:flex-row max-w-screen-full  p-3">
+                {/* Image Section */}
+                <div className="mt-6 md:mt-0 md:ml-10">
+                    <Image
+                        src="/image/table8.png"
+                        height={900}
+                        width={900}
+                        alt="A stylish rocket single seater"
+                        className="rounded-lg "
+                    />
+                </div>
+                {/* Text Content */}
+                <div className=" my-auto text-center md:mr-40 ">
+                    <p className='font-bold text-xl'>New Arrivals</p>
+                    <h2 className="text-4xl sm:text-4xl md:text-4xl font-black my-6">Asgaard sofa</h2>
 
-export const Hero5 = () => {
-  return (
-    <div className="relative flex items-center justify-center min-h-[300px] bg-[#FAFAFA]">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: "url('/image/bginsta.png')" }}
-      ></div>
-      <div className="relative text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Instagram</h2>
-        <p className="text-gray-600 mb-6">Follow our store on Instagram</p>
-        <button className="px-6 py-2 bg-white text-gray-800 rounded-full shadow-md hover:bg-gray-100 transition">
-          Follow Us
-        </button>
-      </div>
-    </div>
-  );
-};
+                    <Link href="/asgaarsofa">
+                        <button className='py-3  px-8 border-black border-2'>Order Now</button>
+                    </Link>
+                </div>
+
+            </div>
+            <div className="md:flex-row bg-[#FFFFFF] justify-around mx-auto py-10 px-4">
+                {/* Header Section */}
+                <div className="my-10 text-center mx-auto">
+                    <h2 className="text-3xl font-semibold">Our Blogs</h2>
+                    <p className="text-gray-500 mt-6">
+                        Find a bright ideal to suit your taste with our great selection of suspension, floor, and table lights.
+                    </p>
+                </div>
+
+                {/* Blog Items Section */}
+                <div className='flex gap-0 mx-10 flex-wrap justify-center'>
+                    <div className='mx-auto text-center mb-10 sm:mb-5'>
+                        <Image
+                            src="/image/blog1.png"
+                            height={450}
+                            width={450}
+                            alt="A stylish rocket single seater"
+                            className="rounded-lg"
+                        />
+                        <p className='text-xl font-normal my-3'>Going all-in with millennial design</p>
+                        <Link href="./blog" className="text-xl text-center mx-auto my-3 underline underline-offset-8 text-black-600 font-medium"> Read More</Link>
+                        <span className='text-center mx-28 flex font-light'>
+                            <span className='flex mx-auto text-center'>
+                                <IoTimeOutline size={20} />
+                                <p className='ml-3'>5 min</p>
+                            </span>
+                            <span className='flex  mx-auto text-center'>
+                                <CiCalendar size={20} />
+                                <p className='ml-3'>12<sup>th</sup> Oct 2022</p>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div className='mx-auto text-center mb-10 sm:mb-5'>
+                        <Image
+                            src="/image/blog2.png"
+                            height={450}
+                            width={450}
+                            alt="A stylish rocket single seater"
+                            className="rounded-lg"
+                        />
+                        <p className='text-xl font-normal my-3'>Going all-in with millennial design</p>
+                        <Link href="./blog" className="text-xl text-center mx-auto my-3 underline underline-offset-8 text-black-600 font-medium"> Read More</Link>
+                        <span className='text-center mx-28 flex font-light'>
+                            <span className='flex mx-auto text-center'>
+                                <IoTimeOutline size={20} />
+                                <p className='ml-3'>5 min</p>
+                            </span>
+                            <span className='flex mx-auto text-center'>
+                                <CiCalendar size={20} />
+                                <p className='ml-3'>12<sup>th</sup> Oct 2022</p>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div className='mx-auto text-center mb-10 sm:mb-5'>
+                        <Image
+                            src="/image/blog3.png"
+                            height={450}
+                            width={450}
+                            alt="A stylish rocket single seater"
+                            className="rounded-lg"
+                        />
+                        <p className='text-xl font-normal my-3'>Going all-in with millennial design</p>
+                      
+                        <Link href="./blog" className="text-xl text-center mx-auto my-3 underline underline-offset-8 text-black-600 font-medium"> Read More</Link>
+                        <span className='text-center mx-28 flex font-light'>
+                            <span className='flex  mx-auto text-center'>
+                                <IoTimeOutline size={20} />
+                                <p className='ml-3'>5 min</p>
+                            </span>
+                            <span className='flex mx-auto text-center'>
+                                <CiCalendar size={20} />
+                                <p className='ml-3'>12<sup>th</sup> Oct 2022</p>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div className="relative md:w-[1600px] md:h-[450px] mb-12">
+                {/* Background Image */}
+                <Image
+                    src="/image/insta.png"
+                    height={450}
+                    width={1600}
+                    alt="A stylish rocket single seater"
+                    className="rounded-lg object-cover"
+                />
+                {/* Overlay Content */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-black">
+                    <h3 className="text-3xl md:text-5xl font-bold mb-4">Our Instagram</h3>
+                    <h4 className="md:text-xl mb-6">Follow our store on Instagram</h4>
+                    <button className="rounded-full bg-[#FFFFFF] text-black px-10 py-2 md:px-16 md:py-4 shadow-md hover:shadow-lg">
+                        Follow Us
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    );
+}
 
 export default Hero;
